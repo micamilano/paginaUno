@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;800;900&family=Roboto:wght@100;300;500&display=swap");
+@import "./mediaQueries.scss";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+:root {
+  --nav-color: #ffee00;
+  --border: 1px solid;
+  --border-radius: 30px;
+}
+
+/*--NAV-----*/
+.navbar {
+  background-color: var(--nav-color);
+  height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+
+  img {
+    width: 60px;
+    height: 60px;
+    grid-column: 2/3;
+  }
+
+  .menu {
+    grid-column: 4/7;
+    display: flex;
+    justify-content: space-around;
+
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: #181818;
+        cursor: pointer;
+      }
+
+      :hover {
+        color: white;
+      }
+    }
+  }
+  .shopping {
+    grid-column: 8/9;
+  }
+}
+
+/*--MAIN-----*/
+main {
+  height: 80vh;
+  background-image: linear-gradient(
+      rgba(16, 16, 16, 0.8),
+      rgba(16, 16, 16, 0.8)
+    ),
+    url(/paginauno/img/bg.jpg);
+  background-size: cover;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+
+  .infoContent {
+    color: white;
+
+    h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1.5em;
+      font-weight: 300;
+    }
+
+    h1 {
+      font-size: 5em;
+      color: var(--nav-color);
+    }
+    p {
+      font-weight: 300;
+      font-family: "Montserrat", sans-serif;
+    }
+
+    .btn {
+      font-size: 1em;
+      background: none;
+      color: white;
+      padding: 10px 20px;
+      border: var(--border);
+      border-color: var(--nav-color);
+      border-radius: var(--border-radius);
+      margin-top: 10px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: var(--nav-color);
+    }
+  }
+}
+
+/*--FOOTER-----*/
+footer {
+  display: grid;
+  height: 10vh;
+  align-items: center;
+  color: white;
+  background-color: #181818;
+  grid-template-areas: "listenOnline followMe social";
+
+  div {
+    cursor: pointer;
+  }
+
+  .listenOnline {
+    grid-area: listenOnline;
+    display: flex;
+    justify-content: center;
+    background-color: var(--nav-color);
+    padding: 16px;
+    color: black;
+
+    .fas {
+      font-size: 1.5em;
+      margin-right: 15px;
+    }
+  }
+  .followMe {
+    grid-area: followMe;
+    text-align: center;
+  }
+
+  .social {
+    grid-area: social;
+    text-align: center;
+    font-size: 1.5em;
+    display: flex;
+    justify-content: space-evenly;
+
+    .fab:hover {
+      color: var(--nav-color);
+    }
+  }
+}

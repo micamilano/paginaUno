@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;800;900&family=Roboto:wght@100;300;500&display=swap");
+@media only screen and (max-width: 600px) {
+  .navbar {
+    position: relative;
+  }
+  .navbar .shopping {
+    display: none;
+  }
+  .navbar .menu-bar {
+    display: block;
+    grid-column: 8/9;
+    font-size: 2em;
+    cursor: pointer;
+  }
+  .navbar .menu {
+    position: absolute;
+    width: 100%;
+    height: 70vh;
+    flex-direction: column;
+    display: grid;
+    align-items: center;
+    background-color: var(--nav-color);
+    margin-top: 44em;
+    transform: translateX(170%);
+    transition: 1s all;
+  }
+  .navbar .menu-toggle {
+    transform: translateX(70%);
+  }
+
+  /*---MAIN----*/
+  .infoContent {
+    grid-column: 2/10;
+    grid-row: 5/8;
+  }
+  .infoContent h1 {
+    font-size: 3.5em;
+  }
+
+  /*---FOOTER----*/
+  footer .followMe {
+    display: none;
+  }
+}
+@media only screen and (min-width: 601px) {
+  .menu-bar {
+    display: none;
+  }
+
+  .infoContent {
+    grid-column: 7/10;
+    grid-row: 3/7;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow: hidden;
+  min-height: 100vh;
+}
+
+:root {
+  --nav-color: #ffee00;
+  --border: 1px solid;
+  --border-radius: 30px;
+}
+
+/*--NAV-----*/
+.navbar {
+  background-color: var(--nav-color);
+  height: 10vh;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  align-items: center;
+}
+.navbar img {
+  width: 60px;
+  height: 60px;
+  grid-column: 2/3;
+}
+.navbar .menu {
+  grid-column: 4/7;
+  display: flex;
+  justify-content: space-around;
+}
+.navbar .menu li {
+  list-style: none;
+}
+.navbar .menu li a {
+  text-decoration: none;
+  color: #181818;
+  cursor: pointer;
+}
+.navbar .menu li :hover {
+  color: white;
+}
+.navbar .shopping {
+  grid-column: 8/9;
+}
+
+/*--MAIN-----*/
+main {
+  height: 80vh;
+  background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url(/paginauno/img/bg.jpg);
+  background-size: cover;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+}
+main .infoContent {
+  color: white;
+}
+main .infoContent h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
+}
+main .infoContent h1 {
+  font-size: 5em;
+  color: var(--nav-color);
+}
+main .infoContent p {
+  font-weight: 300;
+  font-family: "Montserrat", sans-serif;
+}
+main .infoContent .btn {
+  font-size: 1em;
+  background: none;
+  color: white;
+  padding: 10px 20px;
+  border: var(--border);
+  border-color: var(--nav-color);
+  border-radius: var(--border-radius);
+  margin-top: 10px;
+  cursor: pointer;
+}
+main .infoContent .btn:hover {
+  background: var(--nav-color);
+}
+
+/*--FOOTER-----*/
+footer {
+  display: grid;
+  height: 10vh;
+  align-items: center;
+  color: white;
+  background-color: #181818;
+  grid-template-areas: "listenOnline followMe social";
+}
+footer div {
+  cursor: pointer;
+}
+footer .listenOnline {
+  grid-area: listenOnline;
+  display: flex;
+  justify-content: center;
+  background-color: var(--nav-color);
+  padding: 16px;
+  color: black;
+}
+footer .listenOnline .fas {
+  font-size: 1.5em;
+  margin-right: 15px;
+}
+footer .followMe {
+  grid-area: followMe;
+  text-align: center;
+}
+footer .social {
+  grid-area: social;
+  text-align: center;
+  font-size: 1.5em;
+  display: flex;
+  justify-content: space-evenly;
+}
+footer .social .fab:hover {
+  color: var(--nav-color);
+}
+
+/*# sourceMappingURL=style.css.map */
